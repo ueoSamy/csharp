@@ -64,14 +64,27 @@ void PrintArray(int[] array)
 
 // Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
 // [3 7 22 2 78] -> 76
-int[] arrayMaxMini = new int[10];
-InputArray(arrayMaxMini);
-PrintArray(arrayMaxMini);
-
-int MinElem(int[] array)
+void InputDoubleArray(double[] array)
 {
-    int minNum = array[0];
-    foreach (int element in array)
+    for (int i = 0; i < array.Length; i++)
+    {
+        array[i] = new Random().Next(1, 100);
+    }
+}
+
+void PrintDoubleArray(double[] array)
+{
+    Console.WriteLine($"[{string.Join(", ", array)}]");
+}
+
+double[] arrayMaxMini = new double[10];
+InputDoubleArray(arrayMaxMini);
+PrintDoubleArray(arrayMaxMini);
+
+double MinElem(double[] array)
+{
+    double minNum = array[0];
+    foreach (double element in array)
     {
         if (element < minNum)
             minNum = element;
@@ -80,10 +93,10 @@ int MinElem(int[] array)
     return minNum;
 }
 
-int MaxElem(int[] array)
+double MaxElem(double[] array)
 {
-    int maxNum = array[0];
-    foreach (int element in array)
+    double maxNum = array[0];
+    foreach (double element in array)
     {
         if (element > maxNum)
             maxNum = element;
